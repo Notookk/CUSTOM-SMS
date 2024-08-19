@@ -1,0 +1,55 @@
+apt update -y
+
+apt upgrade -y
+
+pkg install tor -y
+
+pkg install proxychains-ng
+
+---RUN TOR---
+tor
+
+---Open NEW SESSION---
+
+cd .. 
+
+ls
+
+cd usr
+
+ls
+
+cd etc
+
+ls
+
+pkg install nano
+
+---Now Edit This File proxychains.conf---
+
+nano proxychains.conf
+
+---REMOVE dynamic_chain # Just Remove #---
+
+---ADD strict_chain # Just ADD #---
+
+---Now Set Proxylit socks---
+
+add Another socks5 127.0.0.1 Port
+
+---Now Save---
+
+cd
+
+Now Check IP
+
+curl ifconfig.me
+
+---Open NEW SESSION---
+
+proxychains4 curl ifconfig.me
+
+---Now Run Any Python File to Use Tor Proxy---
+
+proxychains4 python filename.py
+
